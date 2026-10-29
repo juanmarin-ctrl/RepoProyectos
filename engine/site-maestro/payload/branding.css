@@ -1,0 +1,24 @@
+/**
+ * PLACEHOLDER — la IA debe regenerar este archivo por cliente.
+ * Usa variables CSS y prefijo del slug (ej. .s-cliente-*).
+ * Prohibido copiar atmósfera AV Studio / cream+terracotta / purple AI default.
+ */
+
+:root {
+  --sm-bg: #f7f7f5;
+  --sm-text: #1a1a1a;
+  --sm-accent: #2c2c2c;
+  --sm-font-display: "Georgia", serif;
+  --sm-font-body: "Segoe UI", sans-serif;
+}
+
+.site-maestro,
+.site-reemplazar-slug {
+  background: var(--sm-bg);
+  color: var(--sm-text);
+}
+
+.s-reemplazar-slug-section {
+  max-width: 1120px;
+  margin-inline: auto;
+}

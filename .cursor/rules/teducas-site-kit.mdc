@@ -1,0 +1,20 @@
+---
+description: TEDUCAS Site Kit — generar webs únicas por cliente desde brief
+globs:
+  - "proyectos/**"
+  - "engine/**"
+  - "design/**"
+  - "prompts/**"
+  - "brief/**"
+alwaysApply: false
+---
+
+# Site Kit TEDUCAS
+
+Cuando el usuario pida generar o reestructurar una web de cliente:
+
+1. Leer `CLAUDE.md`, `AGENTS.md`, `design/anti-template.md`, `prompts/PIPELINE.md`.
+2. Trabajar por proyecto en `proyectos/<slug>/`.
+3. No reutilizar visualmente `proyectos/av-studio/` ni payloads de otros clientes.
+4. El motor PHP `engine/site-maestro` es genérico: solo rellenar `payload/`.
+5. Antes de entregar, completar el test de unicidad de `AGENTS.md`.

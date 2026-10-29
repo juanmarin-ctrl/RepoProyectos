@@ -1,0 +1,49 @@
+{
+  "project_id": "reemplazar-slug",
+  "version": "1.0.0",
+  "brand": {
+    "name": "REEMPLAZAR — genera con la IA",
+    "tagline": "",
+    "logo": "",
+    "favicon": "",
+    "body_class": "site-reemplazar-slug",
+    "css_prefix": "s-reemplazar-slug"
+  },
+  "experience": {
+    "rubro": "",
+    "archetype": "",
+    "mood": "",
+    "anti_template_ack": false
+  },
+  "media_token": "__SITE_MEDIA__",
+  "header_template": "header.json",
+  "footer_template": "footer.json",
+  "pages": [
+    {
+      "title": "Inicio",
+      "slug": "inicio",
+      "template": "inicio.json",
+      "is_front": true
+    },
+    {
+      "title": "Contacto",
+      "slug": "contacto",
+      "template": "contacto.json"
+    },
+    {
+      "title": "Blog",
+      "slug": "blog",
+      "template": null,
+      "is_blog": true
+    }
+  ],
+  "menus": {
+    "primary": ["Inicio", "Contacto", "Blog"],
+    "legal": []
+  },
+  "posts": [],
+  "assets": {
+    "css": "branding.css",
+    "js": "frontend.js"
+  }
+}

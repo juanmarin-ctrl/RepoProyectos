@@ -1,0 +1,144 @@
+/* =========================================================
+   AV Studio Academy — Custom CSS para Elementor
+   Pegar en: Elementor → Site Settings → Custom CSS
+   (o Apariencia → Personalizar → CSS adicional)
+   ========================================================= */
+
+:root {
+  --av-ink: #12100e;
+  --av-paper: #fffcf8;
+  --av-mist: #f6f1ea;
+  --av-gold: #c4a35a;
+  --av-gold-soft: #e2d0a4;
+  --av-radius: 22px;
+}
+
+/* Tipografía suave en body */
+body {
+  background-color: var(--av-paper);
+}
+
+/* Header glass (añade clase CSS al container del header: av-header-glass) */
+.av-header-glass {
+  border-radius: 999px !important;
+  border: 1px solid rgba(226, 208, 164, 0.28) !important;
+  background: rgba(12, 10, 8, 0.55) !important;
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  padding: 6px 10px 6px 14px !important;
+}
+
+/* Cuando Elementor sticky activa efectos, pasa a claro */
+.elementor-sticky--effects .av-header-glass {
+  background: rgba(255, 252, 248, 0.92) !important;
+  border-color: rgba(196, 163, 90, 0.28) !important;
+  box-shadow: 0 14px 36px rgba(18, 16, 14, 0.1);
+}
+
+.elementor-sticky--effects .av-header-glass .elementor-heading-title,
+.elementor-sticky--effects .av-header-glass .elementor-nav-menu a {
+  color: var(--av-ink) !important;
+}
+
+/* Cards redondeadas (clase: av-card) */
+.av-card {
+  border-radius: var(--av-radius) !important;
+  overflow: hidden;
+  border: 1px solid rgba(18, 16, 14, 0.08);
+  box-shadow: 0 8px 28px rgba(18, 16, 14, 0.05);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.av-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(18, 16, 14, 0.1);
+}
+
+/* Chip / eyebrow pill (clase: av-chip) */
+.av-chip {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem !important;
+  border-radius: 999px !important;
+  background: rgba(196, 163, 90, 0.12) !important;
+  border: 1px solid rgba(196, 163, 90, 0.25) !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  font-weight: 600;
+  color: #9a7a3c !important;
+}
+
+/* CTA oscuro redondeado (clase en section: av-cta-panel) */
+.av-cta-panel {
+  border-radius: 32px !important;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(196, 163, 90, 0.22), transparent 42%),
+    linear-gradient(145deg, #1c1812 0%, #0f0d0b 55%, #1a1611 100%) !important;
+}
+
+/* Imagen con marco suave (clase: av-frame) */
+.av-frame img,
+.av-frame .elementor-widget-container {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Brillo espejo al hover (clase: av-shine) */
+.av-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.av-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.18) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: soft-light;
+}
+
+.av-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Stats */
+.av-stat-number {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(2rem, 3.5vw, 2.7rem) !important;
+  font-weight: 500 !important;
+  color: transparent !important;
+  background: linear-gradient(135deg, #12100e, #9a7a3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Scrollbar suave */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f3efe7; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e2d0a4, #c4a35a);
+  border-radius: 999px;
+  border: 2px solid #f3efe7;
+}
+
+/* Utilidades */
+.av-rounded-pill { border-radius: 999px !important; }
+.av-rounded-lg { border-radius: 32px !important; }
+.av-text-gold { color: #c4a35a !important; }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .av-card,
+  .av-shine::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}

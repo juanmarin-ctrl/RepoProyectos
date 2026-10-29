@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "teducas-site-kit/site.schema.json",
+  "title": "Site Maestro Payload",
+  "type": "object",
+  "required": ["project_id", "version", "brand", "experience", "pages", "menus"],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Slug único del cliente, ej. academia-norte"
+    },
+    "version": { "type": "string" },
+    "brand": {
+      "type": "object",
+      "required": ["name", "tagline", "body_class", "css_prefix"],
+      "properties": {
+        "name": { "type": "string" },
+        "tagline": { "type": "string" },
+        "logo": { "type": "string", "description": "Filename en media/brand/" },
+        "favicon": { "type": "string" },
+        "body_class": { "type": "string", "description": "ej. site-academia-norte" },
+        "css_prefix": { "type": "string", "description": "ej. s-academia-norte" }
+      }
+    },
+    "experience": {
+      "type": "object",
+      "required": ["rubro", "archetype", "mood"],
+      "properties": {
+        "rubro": { "type": "string" },
+        "archetype": { "type": "string" },
+        "mood": { "type": "string" },
+        "anti_template_ack": {
+          "type": "boolean",
+          "description": "Debe ser true: se leyó design/anti-template.md"
+        }
+      }
+    },
+    "media_token": {
+      "type": "string",
+      "default": "__SITE_MEDIA__",
+      "description": "Token en JSON Elementor: __SITE_MEDIA__/archivo.jpg"
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "slug"],
+        "properties": {
+          "title": { "type": "string" },
+          "slug": { "type": "string" },
+          "template": {
+            "type": ["string", "null"],
+            "description": "Archivo en payload/templates/ o null"
+          },
+          "is_front": { "type": "boolean" },
+          "is_blog": { "type": "boolean" },
+          "legal": { "type": "boolean" }
+        }
+      }
+    },
+    "header_template": { "type": ["string", "null"] },
+    "footer_template": { "type": ["string", "null"] },
+    "menus": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Títulos de página en orden"
+        },
+        "legal": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "content"],
+        "properties": {
+          "title": { "type": "string" },
+          "content": { "type": "string" },
+          "image": { "type": "string" },
+          "category": { "type": "string" }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "css": { "type": "string", "default": "branding.css" },
+        "js": { "type": "string", "default": "frontend.js" }
+      }
+    }
+  }
+}
